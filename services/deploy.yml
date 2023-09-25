@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-test
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      hoofdstuk: services
+  template:
+    metadata:
+      labels:
+        hoofdstuk: services
+    spec:
+      containers:
+      - name: hello-ctr
+        image: tomcoolpxl/node-web-app:1.0
+        ports:
+        - containerPort: 8080
