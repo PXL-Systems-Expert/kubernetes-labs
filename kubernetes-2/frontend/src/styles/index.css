@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('/adult-bar-cafe-cinema-375885.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section {
+  height: fit-content;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  padding-bottom: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 27px -20px rgba(255, 255, 255, 0.75);
+}
+
+.section__title {
+  margin: 20px;
+  padding: 15px;
+  color: brown;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.section__row {
+  width: 40%;
+  padding: 5px 0;
+  display: flex;
+  color: white;
+}
+
+.section__row--list {
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.section__row--button {
+  width: 100%;
+  text-align: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+}
+
+.button {
+  width: 100px;
+  margin: 0 20px;
+  padding: 10px 20px;
+  background: brown;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.column-name {
+  width: 20%;
+  padding: 10px 0;
+  background: brown;
+  color: white;
+  text-align: center;
+}
+
+.column-name:first-child {
+  margin-left: 10%;
+}
+
+.cell {
+  width: 100%;
+  margin-left: 10%;
+  display: flex;
+  text-align: center;
+}
+
+.cell__value {
+  width: 20%;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  color: white;
+}
+
+.cell__value--remove {
+  cursor: pointer;
+}
+
+.cell__value > a {
+  text-decoration: none;
+  font-weight: bold;
+  color: brown;
+}
+
+label {
+  width: 50%;
+  text-align: right;
+  margin: 10px 10%;
+  display: block;
+}
+
+input {
+  width: 50%;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+}
