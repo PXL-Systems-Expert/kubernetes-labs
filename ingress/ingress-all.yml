@@ -45,3 +45,30 @@ spec:
             name: svc-hydra
             port:
               number: 8080
+  - host: localhost
+    http:
+      paths:
+      - path: /shield
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-shield
+            port:
+              number: 8080
+      - path: /hydra
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-hydra
+            port:
+              number: 8080
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-shield
+            port:
+              number: 8080
