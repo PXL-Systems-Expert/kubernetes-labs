@@ -12,6 +12,7 @@ spec:
       labels:
         app: nginx
         bada: bing
+        ping: pong
     spec:
       nodeSelector:
         nodeType: edge
