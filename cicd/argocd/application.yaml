@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/systemsexpert-pxl/selabs.git
+    repoURL: https://github.com/pxl-systems-expert/kubernetes-labs.git
     targetRevision: HEAD
     path: cicd/argocd/dev
   destination:
