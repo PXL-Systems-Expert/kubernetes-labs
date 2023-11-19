@@ -49,12 +49,9 @@ kubectl get services --namespace devops-tools
 kubectl get pods --namespace devops-tools -o wide
 $jenkinspod = $(kubectl get pods --namespace devops-tools -o wide | Select-String jenkins-..........-.....).Matches.Value
 kubectl logs --namespace devops-tools $jenkinspod
-kubectl exec -it $jenkinspod cat /var/jenkins_home/secrets/initialAdminPassword -n devops-tools
-
+kubectl exec -it $jenkinspod cat  /var/jenkins_home/secrets/initialAdminPassword -n devops-tools
+# alternatief: kubectl port-forward service/jenkins-service 6420:8080 --namespace jenkins
 # browse naar localhost:8000
-
-# alternatief: kubectl port-forward service/jenkins-service 6420:8080 --namespace devops-tools
-# browse naar localhost:6420
 
 $dockerserver = 'https://index.docker.io/v1/'
 $dockerusername = 'tomcoolpxl'
