@@ -7,7 +7,7 @@ kubeAPI:
   hostIP: 0.0.0.0
   hostPort: "6443"
 volumes:
-  - volume: C:\Users\thraa\systems-expert-2223\jenkins\jenkins_data:/data
+  - volume: C:\Users\thraa\github\kubernetes-labs\jenkins\jenkins_data:/data
     nodeFilters:
       - agent:*
 ports:

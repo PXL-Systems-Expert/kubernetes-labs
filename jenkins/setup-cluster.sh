@@ -40,12 +40,12 @@ echo "Next up, we wil require some Docker Hub info :)"
 echo ""
 DOCKER_SERVER='https://index.docker.io/v1/'
 echo "Enter hub.docker.com username/id:"
-read DOCKER_USER
+DOCKER_USER="user"
 echo "Enter hub.docker.com password:"
-read DOCKER_PASS
+DOCKER_PASS
 echo "Enter hub.docker.com email:"
-read DOCKER_MAIL
+DOCKER_MAIL
 echo "Enter hub.docker.com server:"
-read DOCKER_SERVER
+DOCKER_SERVER
 # kubectl create secret docker-registry dockercred --docker-server=$DOCKER_SERVER --docker-username=$DOCKER_USER --docker-password=$DOCKER_PASS --docker-email=$DOCKER_MAIL
 kubectl create secret docker-registry dockercred --docker-server=$DOCKER_SERVER --docker-username=$DOCKER_USER --docker-password=$DOCKER_PASS --docker-email=$DOCKER_MAIL --namespace devops-tools

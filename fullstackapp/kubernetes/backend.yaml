@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: pscfsa
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: flask-backend
+        image: tomcoolpxl/fullstackappbe:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: database-uri
+        - name: DATABASE_USER
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: database-user
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: psql-secret
+              key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: pscfsa
+  labels:
+    app: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: backend
+  ports:
+  - port: 5000
+    targetPort: 5000

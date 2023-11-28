@@ -11,8 +11,8 @@ k3d cluster create --config .\k3d-config.yaml
 $clustername = "my-ci-cluster"
 # $clustername = $(cat .\k3d-config.yaml | Select-String -Pattern 'name: ').Line.Remove(0, 6)
 # extract kubeconfig
-$KUBECONFIG = "$HOME\k3d\kubeconfig"
-k3d kubeconfig get $clustername > $KUBECONFIG
+#$KUBECONFIG = "$HOME\k3d\kubeconfig"
+#k3d kubeconfig get $clustername > $KUBECONFIG
 # cluster info check
 kubectl cluster-info
 

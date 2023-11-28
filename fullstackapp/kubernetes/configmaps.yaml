@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pg-init-script
+  namespace: pscfsa
+data:
+  CreateDB.sql: |-
+    CREATE TABLE text (
+        id serial PRIMARY KEY,
+        text VARCHAR ( 100 ) UNIQUE NOT NULL
+    );
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+  namespace: pscfsa
+data:
+  database-uri: postgresql
+  database-user: username
+  postgres-db: postgres
