@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplewebservice
+spec:
+  selector:
+    matchLabels:
+      app: simplewebservice
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: simplewebservice
+    spec:
+      containers:
+        - name: simplewebservice
+          image: tomcoolpxl/simplewebservice:0.0.3-SNAPSHOT
+          ports:
+            - containerPort: 8080
