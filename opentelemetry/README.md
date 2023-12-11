@@ -6,11 +6,7 @@ helm install my-otel-demo open-telemetry/opentelemetry-demo
 kubectl apply -f .\ingress.yaml
 
 http://otel-demo.local.gd/
-http://otel-demo.local.gd/grafana
+http://otel-demo.local.gd/grafana/
 http://otel-demo.local.gd/feature
 http://otel-demo.local.gd/loadgen/
 http://otel-demo.local.gd/jaeger/ui
-
-kubectl port-forward svc/my-otel-demo-otelcol 4318:4318
-
-k3d cluster delete mycluster
